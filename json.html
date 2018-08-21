@@ -23,6 +23,11 @@ var obj = data.json; //JSON.parse(""){
     border: none;
     display: block;
 }
+    .tabcontent {
+        display: none;
+    }
+   
+    
     
 </style>
 
@@ -34,8 +39,8 @@ var obj = data.json; //JSON.parse(""){
       <button class="tablinks" onclick="openCity(event, 'tbl13')">2013</button>
     </div>
 </div>
-<div id="tbl12" class="tabcontent"></div>
-<div id="tbl13" class="tabcontent" style="display: none;"></div>
+<div id="tbl12" class="tabcontent" style="display: block;"></div>
+<div id="tbl13" class="tabcontent" ></div>
 
 <script>
 var data;
@@ -87,7 +92,7 @@ data = {
         text13+="<tr><td>"+data.table13[i].school+"</td><td>"+data.table13[i].class+"</td><td>"+data.table13[i].student+"</td><td>"+data.table13[i].age+"</td><td>"+data.table13[i].marks+"</td></tr>";
         
     };
-     text13+="</tbody></<table>>";
+     text13+="</tbody></<table>";
     document.getElementById("tbl13").innerHTML = text13;
    
   
