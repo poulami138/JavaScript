@@ -1,0 +1,46 @@
+{
+    data {
+        "logo" : {
+            "img" : "logo.jpg",
+            "alt" : "logo"
+        },
+
+        "nav": {"home", "about" , "contact"},
+
+        "slider":{
+            "item": [
+                {
+                  "img": "images/1.jpg",
+                "alt" : "Owl Image 1"  
+                },
+                {
+                  "img": "images/2.jpg",
+                "alt" : "Owl Image 1"  
+                },
+                {
+                  "img": "images/3.jpg",
+                "alt" : "Owl Image 1"  
+                },
+                {
+                  "img": "images/4.jpg",
+                "alt" : "Owl Image 1"  
+                },
+                {
+                  "img": "images/5.jpg",
+                "alt" : "Owl Image 1"  
+                },
+                {
+                  "img": "images/6.jpg",
+                "alt" : "Owl Image 1"  
+                },
+            ]
+        },
+
+        "content" :{
+            "img" : "content.jpg",
+            "heading" : "Hello World",
+            "text" : "abc"
+        },
+
+    }
+}

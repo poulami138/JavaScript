@@ -1,0 +1,130 @@
+<!--<script>
+var jsondata;
+var content= "<table><tr><th>School</th><th>Class</th><th>Student</th><th>Age</th><th>marks</th>";
+var obj = data.json; //JSON.parse(""){
+    console.log(response);
+    jsondata = response;
+    each(jsondata.table,function(i, obj){
+        content+= "<tr><td>"+obj.school+"</td><td>"+obj.class+"</td><td>"+obj.student+"</td><td>"+obj.age+"</td><td>"+obj.marks+"</td></tr>"
+    });
+    content+="</table>";
+    console.log(content);
+});
+</script>-->
+<style>
+.dropdown-content {
+    display: none;
+}
+    .show {
+        display: block;
+    }
+    .tablinks {
+    background: none;
+    border: none;
+    display: block;
+}
+    
+</style>
+
+
+<div class="dropdown">
+    <button onclick="myFunction()" class="dropbtn">Dropdown</button>
+     <div id="myDropdown" class="dropdown-content">
+      <button class="tablinks" onclick="openCity(event, 'tbl12')">2012</button>
+      <button class="tablinks" onclick="openCity(event, 'tbl13')">2013</button>
+    </div>
+</div>
+<div id="tbl12" class="tabcontent"></div>
+<div id="tbl13" class="tabcontent" style="display: none;"></div>
+
+<script>
+var data;
+var i;
+var text12;
+var text13;
+data = {
+    "table12": [
+        {"school":"abc", "class":"1","student":"dog","age":"5","marks":"100%"},
+        {"school":"def", "class":"2","student":"cat","age":"5","marks":"90%"},
+        {"school":"ghi", "class":"3","student":"tiger","age":"5","marks":"80%"},
+        {"school":"jkl", "class":"4","student":"lion","age":"5","marks":"70%"},
+        {"school":"mno", "class":"5","student":"monkey","age":"5","marks":"60%"},
+        {"school":"pqr", "class":"6","student":"cow","age":"5","marks":"50%"},
+        {"school":"stu", "class":"7","student":"horse","age":"5","marks":"40%"},
+        {"school":"vwx", "class":"8","student":"donkey","age":"5","marks":"30%"},
+        {"school":"yz", "class":"9","student":"ox","age":"5","marks":"20%"}
+        
+         
+    ],
+    
+    "table13": [
+        {"school":"yz", "class":"9","student":"ox","age":"5","marks":"20%"},
+        {"school":"vwx", "class":"8","student":"donkey","age":"5","marks":"30%"},
+        {"school":"stu", "class":"7","student":"horse","age":"5","marks":"40%"},
+        {"school":"pqr", "class":"6","student":"cow","age":"5","marks":"50%"},
+        {"school":"mno", "class":"5","student":"monkey","age":"5","marks":"60%"},
+        {"school":"jkl", "class":"4","student":"lion","age":"5","marks":"70%"},
+        {"school":"ghi", "class":"3","student":"tiger","age":"5","marks":"80%"},
+        {"school":"def", "class":"2","student":"cat","age":"5","marks":"90%"},
+        {"school":"abc", "class":"1","student":"dog","age":"5","marks":"100%"}
+
+    ]
+}
+
+    text12 = "<table><thead><tr><th>School</th><th>Class</th><th>Student</th><th>Age</th><th>marks</th></tr></thead>";
+    for (i in data.table12){
+        text12+"<tbody>";
+        text12+="<tr><td>"+data.table12[i].school+"</td><td>"+data.table12[i].class+"</td><td>"+data.table12[i].student+"</td><td>"+data.table12[i].age+"</td><td>"+data.table12[i].marks+"</td></tr>";
+        
+    };
+  
+    text12+="</tbody></table>";
+    document.getElementById("tbl12").innerHTML = text12;
+    
+    text13 = "<table><thead><tr><th>School</th><th>Class</th><th>Student</th><th>Age</th><th>marks</th></tr></thead>";  
+    for (i in data.table13){
+        text13+"<tbody>"
+        text13+="<tr><td>"+data.table13[i].school+"</td><td>"+data.table13[i].class+"</td><td>"+data.table13[i].student+"</td><td>"+data.table13[i].age+"</td><td>"+data.table13[i].marks+"</td></tr>";
+        
+    };
+     text13+="</tbody></<table>>";
+    document.getElementById("tbl13").innerHTML = text13;
+   
+  
+      function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+      }
+
+    window.onclick = function(event) {
+      if (!event.target.matches('.dropbtn')) {
+
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
+        }
+      }
+    }
+
+
+    function openCity(evt, year) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(year).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+    
+  
+
+
+</script>
